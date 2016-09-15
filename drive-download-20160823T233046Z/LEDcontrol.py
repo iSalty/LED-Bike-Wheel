@@ -816,7 +816,7 @@ frame = 1
 
 time1 = time.time()     #Time of last reading
 time2 = time.time()     #Time of passing magnet (now)
-timeUpdate = time2 + 2*SPDeg
+timeUpdate = time2 + SPDeg
 
 #Entering while loop
 try :
@@ -891,12 +891,12 @@ try :
                 print "Too fast Hall 4! "
             theta_1 = 260
 
-        #When the bike goes 2 degree, update theta and assign all LEDs proper colors
+        #When the bike goes 1 degree, update theta and assign all LEDs proper colors
         if ("%.4f" % time.time()) >= ("%.4f" % timeUpdate) :
            # count =  count + 1
            # if count%1000==1 :
            #     print ("%.4f" % time.time())
-            theta_1 = theta_1 - 1   #minus one because way i defined angles (CCW = negative)
+            theta_1 = theta_1 - 1   #minus one because way I defined angles (CCW = negative)
             if theta_1 < 0 :      #changes -1degree to 359degrees
                 theta_1 = theta_1 + 360
             timeUpdate = timeUpdate + SPDeg
